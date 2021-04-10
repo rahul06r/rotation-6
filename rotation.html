@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rotation word</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body {
+        background: #000000;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    
+    .wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .wrapper .container span {
+        position: absolute;
+        /* color: #ffffff; */
+        white-space: nowrap;
+        font-size: 3.5em;
+        padding: 0 10px;
+        transform: translate(-50%, -50%) rotateX(calc(var(--i) * 36deg)) translateZ(100px);
+        transform-style: preserve-3d;
+        font-weight: 900;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 1);
+        background: linear-gradient(90deg, transparent, rgba(0, 0, 0, 1), transparent);
+        line-height: 0.76;
+    }
+    
+    .wrapper .container {
+        transform-style: preserve-3d;
+        animation: animate 25s linear infinite;
+    }
+    
+    @keyframes animate {
+        0% {
+            transform: perspective(1000px) rotateX(0deg) rotate(20deg);
+        }
+        100% {
+            transform: perspective(1000px) rotateX(360deg) rotate(0deg);
+        }
+    }
+    
+    span {
+        color: #ff0000;
+        font-size: 40px;
+    }
+    
+    span i {
+        color: #7cfc00;
+        text-decoration: underline;
+    }
+</style>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <span style="--i:1;">Follow &RightArrow;&nbsp; <i>@flutter_boydev</i></span>
+            <span style="--i:2;">Follow &RightArrow;&nbsp;<i>@flutter_boydev</i></span>
+            <span style="--i:3;">Follow &RightArrow;&nbsp;<i>@flutter_boydev</i></span>
+            <span style="--i:4;">Follow &RightArrow;&nbsp;<i>@flutter_boydev</i></span>
+            <span style="--i:5;">Follow &RightArrow;&nbsp;<i>@flutter_boydev</i></span>
+            <span style="--i:6;">Follow &RightArrow;&nbsp;<i>@flutter_boydev</i></span>
+            <span style="--i:7;">Follow &RightArrow;&nbsp;<i>@flutter_boydev</i></span>
+            <span style="--i:8;">Follow &RightArrow;&nbsp;<i>@flutter_boydev</i></span>
+            <span style="--i:9;">Follow &RightArrow;&nbsp;<i>@flutter_boydev</i></span>
+            <span style="--i:10;">Follow &RightArrow;&nbsp;<i>@flutter_boydev</i></span>
+
+        </div>
+    </div>
+</body>
+
+</html>
